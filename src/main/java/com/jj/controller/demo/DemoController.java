@@ -15,6 +15,7 @@ public class DemoController {
 	@RequestMapping(value = "/demo", method = RequestMethod.GET)
 	public String demo(){
 		logger.info("this is demo.");
-		return "/WEB-INF/jsp/test.jsp";
+		//return "/WEB-INF/jsp/test.jsp";
+		return "test";
 	}
 }
