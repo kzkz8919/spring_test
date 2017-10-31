@@ -5,16 +5,14 @@
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<%@ include file="/WEB-INF/jsp/common/meta.jsp"%>
+		<%@ include file="/WEB-INF/jsp/common/resource.jspf"%>
+		
 <title>测试系统</title>
 </head>
-<script type="text/javascript" 
-		src="${pageContext.request.contextPath}/resources/js/common.js"></script>
 <script type="text/javascript">
 	setInterval('showtime("showtime")', 1000);
 </script>
-<script type="text/javascript" 
-		src="${pageContext.request.contextPath}/resources/js/jquery-3.1.1.min.js"></script>
 <body>
 	<span>Hello world!</span>
 	<span id="showtime"></span>
