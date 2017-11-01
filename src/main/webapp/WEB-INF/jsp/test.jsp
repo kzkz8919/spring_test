@@ -8,7 +8,7 @@
 		<%@ include file="/WEB-INF/jsp/common/meta.jsp"%>
 		<%@ include file="/WEB-INF/jsp/common/resource.jspf"%>
 		
-<title>测试系统</title>
+<title>测试系统1</title>
 </head>
 <script type="text/javascript">
 	setInterval('showtime("showtime")', 1000);
