@@ -22,4 +22,8 @@ public class DemoController {
 		//return "/WEB-INF/jsp/test.jsp";
 		return "test";
 	}
+	
+	
+	
+	
 }
