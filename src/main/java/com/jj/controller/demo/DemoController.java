@@ -1,5 +1,7 @@
 package com.jj.controller.demo;
 
+import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -13,8 +15,10 @@ public class DemoController {
 	private final Logger logger = LoggerFactory.getLogger(DemoController.class);
 	
 	@RequestMapping(value = "/demo", method = RequestMethod.GET)
-	public String demo(){
+	public String demo(Map<String, Object> map){
 		logger.info("this is demo.");
+		map.put("time", "current time:<br>");
+		map.put("data", "this is demo:<br> hello world!");
 		//return "/WEB-INF/jsp/test.jsp";
 		return "test";
 	}
