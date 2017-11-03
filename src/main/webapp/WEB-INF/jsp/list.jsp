@@ -19,7 +19,9 @@
 					<tr>
 						<td class="td">${status.count}</td>
 						<c:forEach items="${item}" var="it">
-						<td class="td"><c:out value="${it}"></c:out></td>
+						<td class="td">
+							<font color='<c:if test="${it=='a1'}">red</c:if>'><c:out value="${it}"></c:out></font>
+						</td>
 						</c:forEach>				
 					</tr>			
 				</c:forEach>		

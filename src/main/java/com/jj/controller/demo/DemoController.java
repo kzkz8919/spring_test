@@ -29,10 +29,10 @@ public class DemoController {
 	}
 	 */	
 
-/*
+
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String demo(Map<String, Object> map){
-
+		logger.info("this is list.");
 		List<List<String>> list = new ArrayList<List<String>>();
 		List<String> info1 = new ArrayList<String>();
 		info1.add("a1");
@@ -49,7 +49,9 @@ public class DemoController {
 		map.put("list", list);
 		return "list";
 	}
-*/	
+	
+	
+/*	
 	@RequestMapping(value = "/map", method = RequestMethod.GET)
 	public String demo(Map<String, Object> map){
 		logger.info("this is map.");
@@ -59,4 +61,5 @@ public class DemoController {
 		map.put("map", m);
 		return "map";
 	}
+*/	
 }

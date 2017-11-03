@@ -15,14 +15,11 @@
 
 		<body>	
 			<table border="1">
-				<c:forEach items="${list}" var="item" varStatus="status">
+				<c:forEach items="${map}" var="item" varStatus="status">
 					<tr>
 						<td class="td">${status.count}</td>
-						<c:forEach items="${item}" var="it">
-						<td class="td">
-							<font color='<c:if test="${it=='a1'}">red</c:if>'><c:out value="${it}"></c:out></font>
-						</td>
-						</c:forEach>				
+						<td class="td"><c:out value="${item.key}"></c:out></td>
+						<td class="td"><c:out value="${item.value}"></c:out></td>
 					</tr>			
 				</c:forEach>		
 			</table>
