@@ -1,6 +1,7 @@
 package com.jj.controller.demo;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -27,7 +28,8 @@ public class DemoController {
 		return "test";
 	}
 	 */	
-	
+
+/*
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String demo(Map<String, Object> map){
 
@@ -47,6 +49,14 @@ public class DemoController {
 		map.put("list", list);
 		return "list";
 	}
-	
-	
+*/	
+	@RequestMapping(value = "/map", method = RequestMethod.GET)
+	public String demo(Map<String, Object> map){
+		logger.info("this is map.");
+		Map<String, String> m = new HashMap<String, String>();
+		m.put("a", "a1");
+		m.put("b", "b1");
+		map.put("map", m);
+		return "map";
+	}
 }
