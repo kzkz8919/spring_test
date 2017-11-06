@@ -20,7 +20,17 @@
 						<td class="td">${status.count}</td>
 						<c:forEach items="${item}" var="it">
 						<td class="td">
-							<font color='<c:if test="${it=='a1'}">red</c:if>'><c:out value="${it}"></c:out></font>
+						<c:choose>
+							<c:when test="${fn:startsWith(it,'a')}">
+							<font color="red"><c:out value="${it}"/></font>	
+							</c:when>
+							<c:when test="${fn:startsWith(it,'c')}">
+							<font color="blue"><c:out value="${it}"/></font>	
+							</c:when>							
+							<c:otherwise>
+							<font color="green"><c:out value="${it}"/></font>	
+							</c:otherwise>			
+						</c:choose>	
 						</td>
 						</c:forEach>				
 					</tr>			
