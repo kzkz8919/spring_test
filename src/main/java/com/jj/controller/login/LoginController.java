@@ -24,6 +24,13 @@ public class LoginController {
 	public String login(String username, String password,Map<String, Object> map){
 		logger.info("this is welcome.");
 		map.put("username", username);
+		return "redirect:/welcome";
+	}
+	
+	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
+	public String welcome(String username,Map<String, Object> map){
+		logger.info("this is welcome2.");
+		map.put("username", username);
 		return "welcome";
 	}
 }
