@@ -10,6 +10,6 @@
 		<title>测试系统</title>
 	</head>
 	<body>
-		welcome to the platform!
+		welcome ${username} to the platform!
 	</body>
 </html>

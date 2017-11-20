@@ -20,9 +20,10 @@ public class LoginController {
 		return "login";
 	}
 
-	@RequestMapping(value = "login", method = RequestMethod.GET)
-	public String login(String username, String password){
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public String login(String username, String password,Map<String, Object> map){
 		logger.info("this is welcome.");
+		map.put("username", username);
 		return "welcome";
 	}
 }
