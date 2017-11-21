@@ -27,6 +27,7 @@ public class DemoController {
 	
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String list(Map<String, Object> map){
+		logger.info("login list");
 		List<List<String>> list =demoService.getList();
 		map.put("list", list);
 		return "list";
