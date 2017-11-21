@@ -5,9 +5,11 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.jj.annotations.LogAspect;
+
 @Service
 public class DemoService {
-	
+	@LogAspect
 	public List<List<String>> getList() {
 		List<List<String>> list = new ArrayList<List<String>>();
 		List<String> info1 = new ArrayList<String>();

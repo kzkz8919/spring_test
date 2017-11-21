@@ -18,7 +18,7 @@
 	
 	<aop:config>
 		<aop:aspect ref="logAspect">
-			<aop:pointcut id="aopLogAspect" expression="execution(* com.jj.service..*.*(..))" />
+			<aop:pointcut id="aopLogAspect" expression="@annotation(com.jj.annotations.LogAspect)" />
 			<aop:around pointcut-ref="aopLogAspect"  method="log"/>
 		</aop:aspect>
 	</aop:config>
