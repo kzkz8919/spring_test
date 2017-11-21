@@ -2,6 +2,8 @@ package com.jj.controller.login;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -21,16 +23,25 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(String username, String password,Map<String, Object> map){
+	public String login(String username, String password,HttpSession session){
 		logger.info("this is welcome.");
-		map.put("username", username);
+		session.setAttribute("username", username);
 		return "redirect:/welcome";
 	}
 	
 	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
-	public String welcome(String username,Map<String, Object> map){
+	public String welcome(HttpSession session, Map<String, Object> map){
 		logger.info("this is welcome2.");
+		String username = (String) session.getAttribute("username");
 		map.put("username", username);
 		return "welcome";
+	}
+	
+	
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(HttpSession session){
+		session.setAttribute("username", null);
+		return "redirect:/";
+		
 	}
 }

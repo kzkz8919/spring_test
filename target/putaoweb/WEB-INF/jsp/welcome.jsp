@@ -10,6 +10,7 @@
 		<title>测试系统</title>
 	</head>
 	<body>
-		welcome ${username} to the platform!
+		<div><a href="${ctx}/logout">退出</a></div>
+		<div>welcome ${username} to the platform!</div>
 	</body>
 </html>
