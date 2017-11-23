@@ -3,14 +3,28 @@ package com.jj.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.jj.annotations.LogAspect;
+import com.jj.dao.domain.Demo;
+import com.jj.dao.mapper.DemoMapper;
+
+
 
 @Service
 public class DemoService {
+	
+	@Autowired
+	private DemoMapper demoMapper;
+	
 	@LogAspect
 	public List<List<String>> getList() {
+		Demo demo = new Demo();
+		demo.setName("test");
+		demo.setMobile("13500000000");
+		demo.setAge(18);
+		demoMapper.add(demo);
 		List<List<String>> list = new ArrayList<List<String>>();
 		List<String> info1 = new ArrayList<String>();
 		info1.add("a1");
