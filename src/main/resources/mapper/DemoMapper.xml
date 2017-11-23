@@ -9,6 +9,32 @@
     <result column="age" property="age"/>    
 	</resultMap> 
 	
+	<select id="findByNameAndMobile" resultMap="demo">
+		select
+			*
+		from
+			demo
+		where
+			name = #{name}
+			and
+			mobile = #{mobile}	
+	</select>
+	
+	<update id="update">
+		update
+			demo
+		set
+			name = #{name},
+			mobile = #{mobile},	
+			age = #{age}
+		where
+			id = #{id}
+	</update>
+	
+	<delete id="delete">
+		delete from demo where id=#{id}
+	</delete>
+	
 	<insert id="add">
 		insert into demo (name,mobile,age)
 		values(#{name}, #{mobile}, #{age})
