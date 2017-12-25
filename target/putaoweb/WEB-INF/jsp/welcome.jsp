@@ -11,6 +11,6 @@
 	</head>
 	<body>
 		<div><a href="${ctx}/logout">退出</a></div>
-		<div>welcome ${username} to the platform!</div>
+		<div>welcome ${user.username} to the platform!</div>
 	</body>
 </html>

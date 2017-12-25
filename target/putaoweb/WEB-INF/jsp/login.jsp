@@ -8,8 +8,29 @@
 		<%@ include file="/WEB-INF/jsp/common/resource.jspf"%>			
 		<title>测试系统</title>
 	</head>
+	
+	<script type="text/javascript" src="${ctx}/resources/js/md5.js"></script>
+	<script type="text/javascript">
+		function register(){
+			$('#login').attr("action","${ctx}/register");
+			$('#login').submit();
+		}
+	
+		function doEncryptLogin(){
+			var encryPsw = hex_md5($("#password").val());
+			$("#encryPsw").val(encryPsw);
+		}
+		
+		$(function(){
+			$("#errMsg").hide();
+			if ("${res}") {
+				 $("#errMsg").show();
+			}
+		});	
+	</script>
+	
 	<body>
-		<form action="${ctx}/login" method="post">
+		<form action="${ctx}/login" method="post" id="login" onsubmit="doEncryptLogin()">
 			<table>
 				<tr>
 					<td>用户名：</td>
@@ -17,10 +38,17 @@
 				</tr>
 				<tr>
 					<td>密码：</td>
-					<td><input type="password" name="password"></td>
+					<td>
+						<input type="password" type="password">
+						<input type="encryPsw" name="password" type="hidden">
+					</td>					
 				</tr>		
 				<tr>
-					<td colspan="2"><button type="submit">登录</button></td>
+					<td><button type="submit">登录</button></td>
+					<td><button onclick="register()">注册</button></td>					
+				</tr>
+				<tr id="errMSg">
+					<td colspan="2"><font color="red">${res.data}</font></td>
 				</tr>		
 			</table>
 		</form>

@@ -9,6 +9,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.jj.dao.domain.User;
+import com.jj.utils.GlobalConstants;
+
 
 public class DemoInterceptor implements HandlerInterceptor{
 
@@ -18,13 +21,11 @@ public class DemoInterceptor implements HandlerInterceptor{
 	public boolean preHandle(HttpServletRequest request, 
 							 HttpServletResponse response, Object handler) throws Exception {
 
-		String username = (String) request.getSession().getAttribute("username");
-		if (StringUtils.isBlank(username)) {
-			logger.info("user not login");
+		User user = (User)request.getSession().getAttribute(GlobalConstants.LOGIN_SESSION_KEY);
+		if (user==null) {
 			response.sendRedirect(request.getContextPath());
 			return false;
 		}
-		logger.info("user has login");
 		return true;
 	}
 	
