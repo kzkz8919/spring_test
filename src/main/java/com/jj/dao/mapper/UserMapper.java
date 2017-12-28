@@ -21,4 +21,7 @@ public interface UserMapper {
 			"and password=#{password} and is_deleted=0")
 	User find(User user);
 
+	
+	@Select("select * from user where is_deleted=0")
+	List<User> findAll();
 }
