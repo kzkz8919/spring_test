@@ -22,12 +22,14 @@ public class UserSchedule {
 	
 	@Autowired
 	private UserService userService;
-	
+
+/*	
 	@PostConstruct
 	public void init(){
 		this.doExecute();
 	}
-	
+
+	*/
 	@Scheduled(cron="0/10 * * * * ?")
 	public void doExecute(){
 		logger.info("begin to load user table.");
